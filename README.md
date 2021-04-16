@@ -1,5 +1,7 @@
 # BillSplitter
 
+Developer: Simon Chalder
+
 A graphical desktop application to calculate the share of a bill bewtween multiple persons.
 
 ![1](https://user-images.githubusercontent.com/66743889/115021057-5f4abc00-9eb3-11eb-95fc-443a4ec8ef8a.jpg)
@@ -18,3 +20,6 @@ To-do:
  - Look into Trip Advisor API and possibly add functionaility to leave review through the app
  - UI changes to improve looks and usability
 
+Find me here on GitHub at github.com/simonchalder on Twitter at twitter.com/ChalderSimon and on Mastodon at cybersi_io@fosstodon.org
+
+Friendly criticism always appreciated!
