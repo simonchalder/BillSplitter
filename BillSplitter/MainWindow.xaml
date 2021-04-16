@@ -39,24 +39,28 @@
 				Grid.Row="2"
                 Grid.ColumnSpan="2"
 				FontSize="16"
-                Width="200"/>
+                Width="200"
+                Margin="0, 10, 0, 0"/>
 
         <Label x:Name = "label2" 
                Grid.Column="1" 
                Grid.Row ="3" 
                Content= "Persons" 
-               Width = "auto"/>
+               Width = "auto"
+               Margin="0, 10, 0, 0"/>
 
         <Label x:Name = "label3" 
                Grid.Column="2" 
                Grid.Row ="3" 
                Content= "Tip %" 
-               Width = "auto"/>
+               Width = "auto"
+               Margin="0, 10, 0, 0"/>
 
         <ComboBox x:Name = "persons_comboBox" 
          SelectedIndex="0"
          Grid.Column="1" 
-         Grid.Row="4">
+         Grid.Row="4"
+         Margin="0, 10, 0, 0">
             <ComboBoxItem Content = "2" />
             <ComboBoxItem Content = "3" />
             <ComboBoxItem Content = "4" />
@@ -67,7 +71,8 @@
         <ComboBox x:Name = "tip_comboBox" 
          SelectedIndex="10"
          Grid.Column="2" 
-         Grid.Row="4">
+         Grid.Row="4"
+         Margin="0, 10, 0, 0">
             <ComboBoxItem Content = "10" />
             <ComboBoxItem Content = "12" />
             <ComboBoxItem Content = "15" />
@@ -80,40 +85,47 @@
 				Grid.Column="1"
 				Grid.Row="5"
                 Grid.ColumnSpan="2"
+                Margin="0, 10, 0, 0"
                 Click="submitButton_Click"
         />
 
         <Label Grid.Column="1" 
                Grid.Row ="6" 
-               Content= "Bill" 
+               Content= "Bill"
+               Margin="0, 10, 0, 0"
         />
 
         <TextBlock x:Name="share_output" 
                    Grid.Column="2"
 				   Grid.Row="6"
 				   FontSize="16"
+                   Margin="0, 10, 0, 0"
         />
 
         <Label Grid.Column="1" 
                Grid.Row ="7" 
                Content= "Tip" 
+               Margin="0, 10, 0, 0"
         />
 
         <TextBlock x:Name="tip_output" 
                    Grid.Column="2"
 				   Grid.Row="7"
 				   FontSize="16"
+                   Margin="0, 10, 0, 0"
         />
 
         <Label Grid.Column="1" 
                Grid.Row ="8" 
                Content= "Total" 
+               Margin="0, 10, 0, 0"
         />
 
         <TextBlock x:Name="total_output" 
                    Grid.Column="2"
 				   Grid.Row="8"
 				   FontSize="16"
+                   Margin="0, 10, 0, 0"
         />
 
     </Grid>
