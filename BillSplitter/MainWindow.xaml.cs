@@ -27,29 +27,24 @@ namespace BillSplitter
 
         private void submitButton_Click(object sender, RoutedEventArgs e)
         {
-            decimal bill;
+            Calculation newCalc = new Calculation();
 
             if(input_box.Text != null)
             {
-                bill = decimal.Parse(input_box.Text);
+                newCalc.SetBill(decimal.Parse(input_box.Text));
             }
             else
             {
                 Console.WriteLine("Value passed for bill was null, please enter a value");
-                bill = 0.00M;
+                newCalc.SetBill(0.00M);
             }
             
-            int tip_percent = int.Parse(tip_comboBox.Text);
-            int persons = int.Parse(persons_comboBox.Text);
+            newCalc.SetTipPercentage(int.Parse(tip_comboBox.Text));
+            newCalc.SetPersons(int.Parse(persons_comboBox.Text));
 
-            decimal tip = decimal.Round(bill * tip_percent / 100 / persons, 2);
-            Console.WriteLine(tip);
-            decimal share = decimal.Round(bill / persons, 2);
-            decimal total = decimal.Round(share + tip, 2);
-
-            share_output.Text = share.ToString();
-            tip_output.Text = tip.ToString();
-            total_output.Text = total.ToString();
+            share_output.Text = newCalc.CalculateShare().ToString();
+            tip_output.Text = newCalc.CalculateTip().ToString();
+            total_output.Text = newCalc.CalculateTotal().ToString();
 
         }
     }
