@@ -27,7 +27,18 @@ namespace BillSplitter
 
         private void submitButton_Click(object sender, RoutedEventArgs e)
         {
-            decimal bill = decimal.Parse(input_box.Text);
+            decimal bill;
+
+            if(input_box.Text != null)
+            {
+                bill = decimal.Parse(input_box.Text);
+            }
+            else
+            {
+                Console.WriteLine("Value passed for bill was null, please enter a value");
+                bill = 0.00M;
+            }
+            
             int tip_percent = int.Parse(tip_comboBox.Text);
             int persons = int.Parse(persons_comboBox.Text);
 
