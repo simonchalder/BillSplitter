@@ -28,24 +28,27 @@ namespace BillSplitter
         private void submitButton_Click(object sender, RoutedEventArgs e)
         {
             Calculation newCalc = new Calculation();
+            decimal result;
+            bool digits = decimal.TryParse(input_box.Text, out result);
 
-            if(input_box.Text != null)
+            if (input_box.Text != null && digits == true)
             {
                 newCalc.SetBill(decimal.Parse(input_box.Text));
+                newCalc.SetTipPercentage(int.Parse(tip_comboBox.Text));
+                newCalc.SetPersons(int.Parse(persons_comboBox.Text));
             }
             else
             {
-                Console.WriteLine("Value passed for bill was null, please enter a value");
-                newCalc.SetBill(0.00M);
+                MessageBox.Show(this, "Please enter a valid amount", "BillSplitter");
+                Console.WriteLine();
+                newCalc.SetBill(0.01M);
+                newCalc.SetTipPercentage(int.Parse(tip_comboBox.Text));
+                newCalc.SetPersons(int.Parse(persons_comboBox.Text));
             }
             
-            newCalc.SetTipPercentage(int.Parse(tip_comboBox.Text));
-            newCalc.SetPersons(int.Parse(persons_comboBox.Text));
-
-            share_output.Text = newCalc.CalculateShare().ToString();
-            tip_output.Text = newCalc.CalculateTip().ToString();
-            total_output.Text = newCalc.CalculateTotal().ToString();
-
+            share_output.Text = $"£{newCalc.CalculateShare().ToString()}";
+            tip_output.Text = $"£{newCalc.CalculateTip().ToString()}";
+            total_output.Text = $"£{newCalc.CalculateTotal().ToString()}";
         }
     }
 }
